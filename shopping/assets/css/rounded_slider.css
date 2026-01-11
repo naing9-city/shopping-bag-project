@@ -1,0 +1,29 @@
+/* ================== ROUNDED PREMIUM SLIDER ================== */
+
+/* Main Slider Container */
+.cnt-home .homepage-slider3 {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    /* Premium shadow */
+    margin-bottom: 30px;
+    transform: translateZ(0);
+    /* Hardware acceleration for rounded corners */
+}
+
+/* Ensure Owl Carousel items respect the border radius */
+.cnt-home .homepage-slider3 .owl-carousel .owl-wrapper-outer {
+    border-radius: 20px;
+}
+
+.cnt-home .homepage-slider3 .item {
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center center;
+}
+
+/* Refine the slider height to look more proportionate with rounded corners */
+/* You can adjust this if the images look cut off */
+.cnt-home .homepage-slider3 .item {
+    min-height: 450px;
+}

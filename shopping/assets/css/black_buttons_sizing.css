@@ -1,0 +1,85 @@
+/* ================== BLACK BUTTONS & UNIFORM SIZING REFINEMENTS ================== */
+
+/* 1. Black "Add to Cart" Buttons with Icon */
+/* Home Page Button */
+.cnt-home .product .action .lnk {
+    background: #111 !important;
+    /* Pure Black */
+    color: #fff !important;
+    border-radius: 50px !important;
+    padding: 12px 0 !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    /* Flexbox for icon alignment is handled inline in PHP, but ensuring here just in case */
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+/* Hover Effect */
+.cnt-home .product .action .lnk:hover {
+    background: #333 !important;
+    /* Dark Grey on Hover */
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Search Results Button (Text Part) */
+.cnt-home .search-result-container .cart .action .btn-primary {
+    background: #111 !important;
+    color: #fff !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2) !important;
+}
+
+.cnt-home .search-result-container .cart .action .btn-primary:hover {
+    background: #333 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3) !important;
+}
+
+
+/* 2. Balanced Product Card Sizing */
+/* USER: This is the code block controlling vertical size */
+.cnt-home .product {
+    min-height: 460px;
+    /* Adjusted to be slightly more compact but balanced */
+    height: 100%;
+    /* Ensure it fills the container if flexible */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 20px;
+}
+
+/* Ensure Image Area is consistent */
+.cnt-home .product .product-image {
+    height: 280px;
+    /* Fixed height for image area */
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8f8f8;
+    /* Light background for image container */
+    border-radius: 10px;
+}
+
+.cnt-home .product .product-image img {
+    max-height: 90%;
+    /* Ensure image fits nicely */
+    width: auto;
+    object-fit: contain;
+}
+
+/* Ensure Content Area takes remaining space */
+.cnt-home .product-info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}

@@ -1,0 +1,601 @@
+/* Premium Global Styles - Injected */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+.cnt-home,
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+
+    color: #333;
+    min-height: 100vh;
+}
+
+/* ================== PREMIUM HEADER STYLES ================== */
+.cnt-home .premium-header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+    padding: 5px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.cnt-home .premium-navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+    height: 85px;
+}
+
+/* Search Bar Styles */
+.cnt-home .search-area {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.cnt-home .premium-search-bar {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 50px;
+    padding: 5px 5px 5px 20px;
+    width: 600px;
+    max-width: 100%;
+    transition: all 0.3s ease;
+}
+
+.cnt-home .premium-search-bar:hover,
+.cnt-home .premium-search-bar:focus-within {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border-color: #ccc;
+}
+
+.cnt-home .search-icon {
+    color: #333;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.cnt-home .search-field {
+    border: none;
+    background: transparent;
+    flex-grow: 1;
+    font-size: 14px;
+    color: #555;
+    outline: none;
+    padding: 10px 0;
+}
+
+.cnt-home .search-button {
+    background: #111;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    padding: 12px 30px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.cnt-home .search-button:hover {
+    background: #333;
+}
+
+
+/* Logo Styling */
+.cnt-home .navbar-brand {
+    padding: 0;
+    margin-right: 0;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.cnt-home .logo-img {
+    height: 50px;
+    width: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.cnt-home .navbar-brand:hover .logo-img {
+    transform: scale(1.05);
+}
+
+/* Navigation Menu */
+.cnt-home .navbar-menu {
+    flex-grow: 0;
+}
+
+.cnt-home .navbar-menu .navbar-nav {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin: 0;
+}
+
+.cnt-home .navbar-menu .navbar-nav>li {
+    float: none;
+    display: inline-block;
+    margin-left: 35px;
+    margin-right: 0;
+}
+
+.cnt-home .navbar-menu .navbar-nav>li>a {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: #444;
+    padding: 10px 0;
+    background: transparent !important;
+    position: relative;
+    transition: color 0.3s ease;
+    text-transform: capitalize;
+}
+
+/* Hover Effect for Links */
+.cnt-home .navbar-menu .navbar-nav>li>a:hover,
+.cnt-home .navbar-menu .navbar-nav>li.active>a {
+    color: #ff416c;
+}
+
+.cnt-home .navbar-menu .navbar-nav>li>a:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 5px;
+    left: 0;
+    background-color: #ff416c;
+    transition: width 0.3s ease;
+}
+
+.cnt-home .navbar-menu .navbar-nav>li>a:hover:after,
+.cnt-home .navbar-menu .navbar-nav>li.active>a:after {
+    width: 100%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+    .cnt-home .premium-navbar {
+        padding: 0 15px;
+    }
+
+    .cnt-home .navbar-menu .navbar-nav>li {
+        margin-right: 15px;
+    }
+}
+
+/* ================== END HEADER STYLES ================== */
+
+
+/* Breadcrumb */
+/* ... (existing breadcrumb styles) ... */
+
+/* ================== FOOTER INFO CARDS ================== */
+
+/* Uniform Card Height & Layout */
+.cnt-home .contact-info,
+.cnt-home .contact-timing,
+.cnt-home .contact-information {
+    background: #fff;
+    border-radius: 15px;
+    padding: 30px;
+    border: 1px solid #f0f0f0;
+    transition: all 0.3s ease;
+    height: 100%;
+    min-height: 380px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03);
+}
+
+.cnt-home .contact-info:hover,
+.cnt-home .contact-timing:hover,
+.cnt-home .contact-information:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+    border-color: #ff416c;
+}
+
+/* Delivery Section Refinements */
+.cnt-home .contact-timing .module-body {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.cnt-home .contact-timing .table {
+    margin-bottom: 0;
+}
+
+.cnt-home .contact-timing .table>tbody>tr>td {
+    border-top: none;
+    border-bottom: 1px dashed #eee;
+    padding: 12px 0;
+    font-size: 14px;
+    color: #555;
+    vertical-align: middle;
+}
+
+.cnt-home .contact-timing .table>tbody>tr:last-child>td {
+    border-bottom: none;
+}
+
+.cnt-home .contact-timing .table .pull-right {
+    font-weight: 600;
+    color: #ff416c;
+}
+
+/* Information Section Icons & Effects */
+.cnt-home .contact-information .media {
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+}
+
+.cnt-home .contact-information .media-body {
+    padding-left: 15px;
+    width: auto;
+}
+
+.cnt-home .contact-information .icon {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: inline-block;
+}
+
+.cnt-home .contact-information .icon .fa-stack-2x {
+    color: rgba(255, 65, 108, 0.1);
+    transition: color 0.3s ease;
+}
+
+.cnt-home .contact-information .icon .fa-inverse {
+    color: #ff416c;
+    transition: color 0.3s ease;
+}
+
+/* Hover Effects on Icons */
+.cnt-home .contact-information .media:hover .icon {
+    transform: scale(1.15) rotate(10deg);
+}
+
+.cnt-home .contact-information .media:hover .icon .fa-stack-2x {
+    color: #ff416c;
+}
+
+.cnt-home .contact-information .media:hover .icon .fa-inverse {
+    color: #fff;
+}
+
+/* Headings */
+.cnt-home .module-heading .module-title {
+    color: #333;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.cnt-home .module-heading .module-title:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background: #ff416c;
+    border-radius: 3px;
+    transition: width 0.3s ease;
+}
+
+/* Hover title effect */
+.cnt-home .contact-info:hover .module-title:after,
+.cnt-home .contact-timing:hover .module-title:after,
+.cnt-home .contact-information:hover .module-title:after {
+    width: 60px;
+}
+
+.cnt-home .breadcrumb {
+    background: transparent;
+    border-bottom: none;
+    padding-top: 30px;
+}
+
+.cnt-home .breadcrumb ul li,
+.cnt-home .breadcrumb ul li a {
+    color: #666;
+    text-shadow: none;
+}
+
+.cnt-home .breadcrumb ul li.active {
+    color: #ff416c;
+    font-weight: 500;
+}
+
+/* Auth Cards (Login/Register) */
+.cnt-home .sign-in-page .sign-in,
+.cnt-home .sign-in-page .create-new-account {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 20px;
+    padding: 40px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Spacing between signs */
+.cnt-home .sign-in-page .row>div {
+    margin-bottom: 20px;
+}
+
+@media (min-width: 992px) {
+    .cnt-home .sign-in-page .sign-in {
+        margin-right: 15px;
+        width: calc(50% - 15px);
+    }
+
+    .cnt-home .sign-in-page .create-new-account {
+        margin-left: 15px;
+        width: calc(50% - 15px);
+    }
+}
+
+.cnt-home .sign-in-page .sign-in:hover,
+.cnt-home .sign-in-page .create-new-account:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+}
+
+.cnt-home h4 {
+    color: #333;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.cnt-home p,
+.cnt-home label {
+    color: #666 !important;
+    font-weight: 400;
+}
+
+.cnt-home .form-control {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    color: #333;
+    border-radius: 10px;
+    height: 50px;
+    padding: 0 20px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    box-shadow: none;
+}
+
+.cnt-home .form-control:focus {
+    background: #fff;
+    border-color: #ff416c;
+    box-shadow: 0 0 0 4px rgba(255, 65, 108, 0.1);
+}
+
+/* Buttons */
+.cnt-home .btn-primary {
+    background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%);
+    border: none;
+    border-radius: 50px;
+    padding: 14px 35px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 13px;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(255, 65, 108, 0.3);
+}
+
+.cnt-home .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px rgba(255, 65, 108, 0.4);
+}
+
+/* Footer & Info Cards */
+.cnt-home footer.footer {
+    background: #ffffff !important;
+    padding-top: 60px;
+    border-top: 1px solid rgba(0, 0, 0, 0.996);
+    padding-bottom: 30px;
+}
+
+.cnt-home .copyright-bar {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #f0f0f0;
+    color: #888;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.cnt-home .contact-info,
+.cnt-home .contact-timing,
+.cnt-home .contact-information {
+    background: #fff;
+    border-radius: 15px;
+    padding: 30px;
+    border: 1px solid #f0f0f0;
+    transition: all 0.3s ease;
+    height: 100%;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03);
+}
+
+.cnt-home .contact-info:hover,
+.cnt-home .contact-timing:hover,
+.cnt-home .contact-information:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+    border-color: #ff416c;
+}
+
+.cnt-home .module-heading .module-title {
+    color: #333;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.cnt-home .module-heading .module-title:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background: #ff416c;
+    border-radius: 3px;
+}
+
+.cnt-home .media-body p,
+.cnt-home .table>tbody>tr>td {
+    color: #666;
+    border-color: #f0f0f0;
+}
+
+.cnt-home .about-us {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Icons in Footer */
+.cnt-home .icon {
+    color: #ff416c;
+}
+
+.cnt-home .fa-stack-2x {
+    color: rgba(255, 65, 108, 0.1);
+}
+
+.cnt-home .fa-inverse {
+    color: #ff4b2b;
+}
+
+/* Brand Slider Overlay Override */
+.cnt-home #brands-carousel {
+    background: #fff;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+}
+
+/* ================== ADDRESS FORMS (CART) ================== */
+.cnt-home .estimate-ship-tax {
+    margin-bottom: 30px;
+}
+
+.cnt-home .estimate-ship-tax .table {
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    background: #fff;
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Hover Glow Effect */
+.cnt-home .estimate-ship-tax .table:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(255, 65, 108, 0.15);
+    border-color: rgba(255, 65, 108, 0.4);
+}
+
+/* Header Styling */
+.cnt-home .estimate-ship-tax .estimate-title {
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #333;
+    letter-spacing: 0.5px;
+    display: block;
+    padding: 10px 0 0 0;
+}
+
+.cnt-home .estimate-ship-tax .table>thead>tr>th {
+    background: linear-gradient(to right, #ffffff, #f9f9f9);
+    border-bottom: 2px solid #f0f0f0;
+    padding: 25px 30px;
+}
+
+/* Body Styling */
+.cnt-home .estimate-ship-tax .table>tbody>tr>td {
+    padding: 30px;
+    border: none;
+}
+
+/* Input Fields */
+.cnt-home .estimate-ship-tax .form-group label {
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 10px;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.cnt-home .estimate-ship-tax .form-control {
+    border: 2px solid #f0f0f0;
+    border-radius: 12px;
+    box-shadow: none;
+    padding: 12px 18px;
+    height: auto;
+    transition: all 0.3s ease;
+    background: #fdfdfd;
+    color: #333;
+    font-size: 14px;
+}
+
+.cnt-home .estimate-ship-tax .form-control:focus {
+    border-color: #ff416c;
+    background: #fff;
+    box-shadow: 0 0 0 5px rgba(255, 65, 108, 0.05);
+}
+
+/* Textarea specific */
+.cnt-home .estimate-ship-tax textarea.form-control {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* Button Styling (Update Button) */
+.cnt-home .estimate-ship-tax .checkout-page-button {
+    background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%);
+    border: none;
+    border-radius: 50px;
+    padding: 14px 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    box-shadow: 0 10px 20px rgba(255, 65, 108, 0.2);
+    transition: all 0.4s ease;
+    margin-top: 20px;
+    width: 100%;
+    color: white;
+}
+
+.cnt-home .estimate-ship-tax .checkout-page-button:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(255, 65, 108, 0.4);
+}

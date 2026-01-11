@@ -1,0 +1,127 @@
+/* ================== HOME PAGE GRID & SLIDER REFINEMENTS ================== */
+
+/* 1. Uniform Product Grid */
+.cnt-home .product {
+    min-height: 480px;
+    /* Fixed height for uniformity */
+    margin: 10px 5px;
+    /* Spacing between grid items */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.cnt-home .product .product-image {
+    height: 300px;
+    /* Fixed image container */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fdfdfd;
+    border-radius: 10px;
+}
+
+.cnt-home .product .product-image img {
+    max-height: 100%;
+    width: auto;
+    object-fit: contain;
+}
+
+.cnt-home .product-info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 15px;
+}
+
+/* 2. Premium "Add to Cart" Button (Home Page Specific) */
+/* The home page uses .lnk.btn-info structure */
+.cnt-home .product .action .lnk {
+    background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%) !important;
+    color: #fff !important;
+    border: none !important;
+    border-radius: 50px !important;
+    padding: 10px 0 !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    width: 100%;
+    display: block;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255, 65, 108, 0.2);
+}
+
+.cnt-home .product .action .lnk:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(255, 65, 108, 0.4);
+    background: linear-gradient(135deg, #ff6b8b 0%, #ff6b4b 100%) !important;
+}
+
+/* Out of Stock Text */
+.cnt-home .product .action div[style*="color:red"] {
+    text-align: center;
+    font-weight: 600;
+    padding: 10px 0;
+    color: #999 !important;
+    /* Premium grey instead of harsh red */
+    background: #f0f0f0;
+    border-radius: 50px;
+    font-size: 13px;
+}
+
+/* 3. Reposition Slider Controls (Owl Carousel) */
+/* Override the top-right absolute positioning */
+.cnt-home .custom-carousel .owl-controls {
+    position: relative !important;
+    top: auto !important;
+    right: auto !important;
+    width: 100% !important;
+    margin-top: 30px;
+    text-align: center;
+}
+
+/* Style the buttons (arrows) */
+.cnt-home .custom-carousel .owl-controls .owl-next,
+.cnt-home .custom-carousel .owl-controls .owl-prev {
+    position: relative !important;
+    top: auto !important;
+    right: auto !important;
+    left: auto !important;
+    display: inline-block !important;
+    margin: 0 10px;
+
+    width: 40px !important;
+    height: 40px !important;
+    background: #fff !important;
+    border: 1px solid #eee;
+    border-radius: 50% !important;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+/* Icon centering */
+.cnt-home .custom-carousel .owl-controls .owl-next:before,
+.cnt-home .custom-carousel .owl-controls .owl-prev:before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    color: #333;
+}
+
+/* Hover effects for arrows */
+.cnt-home .custom-carousel .owl-controls .owl-next:hover,
+.cnt-home .custom-carousel .owl-controls .owl-prev:hover {
+    background: #ff416c !important;
+    border-color: #ff416c;
+    transform: scale(1.1);
+}
+
+.cnt-home .custom-carousel .owl-controls .owl-next:hover:before,
+.cnt-home .custom-carousel .owl-controls .owl-prev:hover:before {
+    color: #fff;
+}

@@ -1,0 +1,15 @@
+/* ================== BLACK SLIDER BUTTON HOVER ================== */
+.cnt-home .custom-carousel .owl-controls .owl-next:hover,
+.cnt-home .custom-carousel .owl-controls .owl-prev:hover {
+    background: #111 !important;
+    /* Black background */
+    border-color: #111 !important;
+    /* Black border */
+    color: #fff !important;
+}
+
+.cnt-home .custom-carousel .owl-controls .owl-next:hover:before,
+.cnt-home .custom-carousel .owl-controls .owl-prev:hover:before {
+    color: #fff !important;
+    /* White icon */
+}

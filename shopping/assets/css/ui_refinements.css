@@ -1,0 +1,157 @@
+/* ================== UI REFINEMENTS ================== */
+
+/* 1. Header Cart Icon Visibility */
+.cnt-home .premium-navbar .navbar-nav>li>a i {
+    font-size: 20px !important;
+    color: #333 !important;
+    transition: all 0.3s ease;
+}
+
+.cnt-home .premium-navbar .navbar-nav>li>a:hover i {
+    color: #ff416c !important;
+    transform: scale(1.1);
+}
+
+.cnt-home .premium-navbar .badge {
+    background: #ff416c !important;
+    box-shadow: 0 2px 5px rgba(255, 65, 108, 0.4);
+}
+
+/* 2. Global Product Card - Minimal Design */
+.cnt-home .product {
+    background: #fff;
+    border-radius: 15px;
+    border: none !important;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+    /* Soft shadow by default */
+    padding: 15px;
+    margin-bottom: 25px;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.cnt-home .product:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Product Image */
+.cnt-home .product .product-image {
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.cnt-home .product .product-image img {
+    border-radius: 10px;
+    transition: transform 0.6s ease;
+}
+
+.cnt-home .product:hover .product-image img {
+    transform: scale(1.05);
+    /* Subtle zoom */
+}
+
+/* Product Info */
+.cnt-home .product-info {
+    padding: 0 5px 5px 5px;
+}
+
+.cnt-home .product-info .name a {
+    color: #333;
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: capitalize;
+    margin-bottom: 5px;
+    display: block;
+    transition: color 0.3s;
+}
+
+.cnt-home .product-info .name a:hover {
+    color: #ff416c;
+}
+
+.cnt-home .product-price .price {
+    color: #ff416c;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.cnt-home .product-price .price-before-discount {
+    color: #aaa;
+    font-size: 13px;
+    text-decoration: line-through;
+    margin-left: 8px;
+}
+
+/* 3. Search Result - Add to Cart Button Refinement */
+/* Minimal Pill Button */
+.cnt-home .search-result-container .cart .action .btn-group {
+    display: flex;
+    align-items: center;
+    background: #f9f9f9;
+    border-radius: 50px;
+    padding: 5px 5px 5px 15px;
+    transition: all 0.3s ease;
+    border: 1px solid #f0f0f0;
+}
+
+.cnt-home .search-result-container .cart .action .btn-group:hover {
+    background: #fff;
+    border-color: #ff416c;
+    box-shadow: 0 5px 15px rgba(255, 65, 108, 0.15);
+}
+
+/* The Icon Button part */
+.cnt-home .search-result-container .cart .action .btn.icon {
+    background: transparent !important;
+    border: none !important;
+    color: #333 !important;
+    padding: 0;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+/* The Text Button part */
+.cnt-home .search-result-container .cart .action .btn-primary {
+    background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%) !important;
+    color: #fff !important;
+    border: none !important;
+    border-radius: 50px !important;
+    padding: 8px 20px !important;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.cnt-home .search-result-container .cart .action .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 65, 108, 0.3);
+}
+
+/* Revert default bootstrap group styling that might conflict */
+.cnt-home .btn-group>.btn:first-child:not(:last-child):not(.dropdown-toggle) {
+    border-bottom-right-radius: 50px;
+    border-top-right-radius: 50px;
+}
+
+/* Wishlist Icon in Search Result */
+.cnt-home .search-result-container .cart .action .wishlist .icon {
+    color: #ccc;
+    font-size: 16px;
+    margin-left: 15px;
+    transition: all 0.3s;
+}
+
+.cnt-home .search-result-container .cart .action .wishlist:hover .icon {
+    color: #ff416c;
+    transform: scale(1.2);
+}
+
+/* Tab Content Spacing */
+.cnt-home .tab-content {
+    margin-top: 20px;
+}

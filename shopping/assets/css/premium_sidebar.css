@@ -1,0 +1,98 @@
+/* ================== PREMIUM SIDEBAR CATEGORIES ================== */
+
+/* Container */
+.cnt-home .side-menu {
+    border: none;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    /* Soft premium shadow */
+    border-radius: 12px;
+    background: #fff;
+    overflow: hidden;
+    margin-bottom: 30px;
+    transition: all 0.3s ease;
+}
+
+.cnt-home .side-menu:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    /* Lift on hover */
+}
+
+/* Header */
+.cnt-home .side-menu .head {
+    background: #333;
+    /* Dark clean header */
+    color: #fff;
+    padding: 15px 20px;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: none;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.cnt-home .side-menu .head i {
+    font-size: 18px;
+    color: #ff416c;
+    /* Premium Accent */
+}
+
+/* Navigation List */
+.cnt-home .side-menu .megamenu-horizontal .nav {
+    padding: 10px 0;
+}
+
+.cnt-home .side-menu .megamenu-horizontal .nav>li {
+    border-bottom: 1px solid #f9f9f9;
+    margin: 0;
+}
+
+.cnt-home .side-menu .megamenu-horizontal .nav>li:last-child {
+    border-bottom: none;
+}
+
+/* Links */
+.cnt-home .side-menu .megamenu-horizontal .nav>li>a {
+    color: #555 !important;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.3s ease;
+    background: transparent;
+    text-transform: capitalize;
+}
+
+/* Icons in Links */
+.cnt-home .side-menu .megamenu-horizontal .nav>li>a i {
+    color: #aaa;
+    font-size: 16px;
+    width: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+/* Hover Effects */
+.cnt-home .side-menu .megamenu-horizontal .nav>li>a:hover,
+.cnt-home .side-menu .megamenu-horizontal .nav>li>a:focus {
+    background: #fffbfb;
+    /* Very subtle pink tint */
+    color: #333 !important;
+    padding-left: 25px;
+    /* Slide effect */
+}
+
+.cnt-home .side-menu .megamenu-horizontal .nav>li>a:hover i {
+    color: #ff416c;
+    /* Icon lights up */
+    transform: scale(1.1);
+}
+
+/* Remove default focus outlines */
+.cnt-home .side-menu .megamenu-horizontal .nav>li>a:focus {
+    outline: none;
+}

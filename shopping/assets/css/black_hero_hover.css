@@ -1,0 +1,15 @@
+/* ================== HERO SLIDER BUTTON HOVER (BLACK) ================== */
+/* Explicit override for the Hero Slider buttons */
+#owl-main:hover .owl-prev:hover,
+#owl-main:hover .owl-next:hover {
+    background: #111 !important;
+    /* Force Black */
+    border-color: #111 !important;
+    transition: all 0.3s ease;
+}
+
+/* Ensure the icon stays white */
+#owl-main:hover .owl-prev:hover:before,
+#owl-main:hover .owl-next:hover:before {
+    color: #fff !important;
+}

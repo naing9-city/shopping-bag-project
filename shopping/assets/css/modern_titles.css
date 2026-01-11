@@ -1,0 +1,47 @@
+/* ================== MODERN SECTION TITLES ================== */
+
+/* Target the specific class used for "All Products" and others */
+.new-product-title {
+    font-size: 24px !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 2px !important;
+    color: #111 !important;
+    margin: 20px 0 30px 0 !important;
+    position: relative;
+    padding-bottom: 15px;
+    display: inline-block;
+    border-bottom: none !important;
+    /* Remove any default borders */
+}
+
+/* Add a modern decorative underline */
+.new-product-title:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, #ff416c 0%, #ff4b2b 100%);
+    border-radius: 2px;
+}
+
+/* Optional: Add a small dot to the right of the line for extra flair */
+.new-product-title:before {
+    content: '';
+    position: absolute;
+    left: 70px;
+    /* Gap from the line */
+    bottom: 0;
+    width: 4px;
+    height: 4px;
+    background: #ccc;
+    border-radius: 50%;
+}
+
+/* Clean up container overlap */
+.more-info-tab {
+    border-bottom: 1px solid #eee;
+    margin-bottom: 30px;
+}

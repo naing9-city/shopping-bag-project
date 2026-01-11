@@ -1,0 +1,34 @@
+/* ================== GLOBAL CART VISIBILITY FIX ================== */
+
+/* Force the cart icon to be visible on ALL pages */
+/* Used explicit path to override any other styles */
+.navbar-nav>li>a>.cart-icon,
+.premium-navbar .navbar-nav>li>a i.cart-icon,
+.premium-navbar .navbar-nav>li>a i.fa-shopping-bag {
+    color: #333 !important;
+    /* Dark color for visibility on white */
+    font-size: 22px !important;
+    display: inline-block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure the parent link is also visible */
+.navbar-nav>li>a {
+    opacity: 1 !important;
+}
+
+/* Hover state for Cart Icon */
+.navbar-nav>li>a:hover>.cart-icon,
+.premium-navbar .navbar-nav>li>a:hover i.cart-icon,
+.premium-navbar .navbar-nav>li>a:hover i.fa-shopping-bag {
+    color: #ff416c !important;
+    transform: scale(1.1);
+}
+
+/* Ensure Dropdown toggle doesn't hide it */
+.dropdown-toggle {
+    display: flex;
+    align-items: center;
+}
