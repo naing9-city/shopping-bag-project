@@ -21,17 +21,7 @@ if (isset($_GET['action'])) {
 				</a>
 			</div>
 
-			<!-- Search Bar Section -->
-			<div class="search-area">
-				<form method="post" action="search-result.php">
-					<div class="premium-search-bar">
-						<i class="fa fa-search search-icon"></i>
-						<input class="search-field" placeholder="I'm looking for..." name="product"
-							required="required" />
-						<button class="search-button" type="submit" name="search">Search</button>
-					</div>
-				</form>
-			</div>
+
 
 			<!-- Navigation Links -->
 			<div class="navbar-menu">
@@ -126,8 +116,13 @@ if (isset($_GET['action'])) {
 
 					<!-- Login/Logout -->
 					<?php if (strlen($_SESSION['login']) == 0) { ?>
-						<li class="border-0"><a href="login.php" class="btn btn-primary"
-								style="padding: 8px 20px; color: white !important; margin-left:10px; background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%); border-radius: 50px;">Login</a>
+						<li class="border-0">
+						<li class="border-0">
+							<a href="login.php"
+								style="display: inline-block !important; padding: 8px 25px !important; color: #fff !important; margin-left:10px; background: #111 !important; border-radius: 50px !important; font-weight: 600; text-transform: uppercase; font-size: 12px; letter-spacing: 1px; text-decoration: none !important; transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+								<i class="fa fa-user" style="margin-right:6px;"></i> Login
+							</a>
+						</li>
 						</li>
 					<?php } else { ?>
 						<li class="border-0"><a href="logout.php"><i class="fa fa-sign-out"></i> Logout</a></li>
@@ -147,6 +142,26 @@ if (isset($_GET['action'])) {
 
 	.premium-navbar .navbar-nav>li>a:hover i {
 		color: #ff416c;
+	}
+
+	/* Login Button Hover */
+	/* Login Button Hover */
+	.premium-navbar .navbar-nav>li>a[href="login.php"]:hover {
+		background: #333 !important;
+		transform: scale(1.08) !important;
+		/* Slightly stronger pop */
+		box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25) !important;
+		color: #fff !important;
+	}
+
+	/* Remove any decorative lines (red line) from the button */
+	.premium-navbar .navbar-nav>li>a[href="login.php"]:after,
+	.premium-navbar .navbar-nav>li>a[href="login.php"]:before {
+		display: none !important;
+		content: none !important;
+		width: 0 !important;
+		height: 0 !important;
+		opacity: 0 !important;
 	}
 
 	.premium-navbar .navbar-menu {

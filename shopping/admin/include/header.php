@@ -1,32 +1,24 @@
-<div class="navbar navbar-fixed-top">
-		<div class="navbar-inner">
-			<div class="container">
-				<a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-inverse-collapse">
-					<i class="icon-reorder shaded"></i>
+<div class="premium-dashboard-header">
+	<div class="premium-brand">
+		<a href="../index.php">
+			<img src="../assets/images/logo.svg" alt="Cherry Store" class="logo-img">
+		</a>
+	</div>
+
+	<div class="premium-user-nav" style="margin-right: 60px;">
+		<ul>
+
+			<li>
+				<a href="change-password.php" class="btn-logout"
+					style="background:transparent; color:#555; border:1px solid #ddd; margin-right: 15px;">
+					<i class="icon-key"></i> Password
 				</a>
-
-			  	<a class="brand" href="#">
-			  		Cherry Bag Store | Admin
-			  	</a>
-
-				<div class="nav-collapse collapse navbar-inverse-collapse">
-					<ul class="nav pull-right">
-						<li><a href="#">
-							Admin
-						</a></li>
-						<li class="nav-user dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-								<img src="images/user.png" class="nav-avatar" />
-								<b class="caret"></b>
-							</a>
-							<ul class="dropdown-menu">
-								<li><a href="change-password.php">Change Password</a></li>
-								<li class="divider"></li>
-								<li><a href="logout.php">Logout</a></li>
-							</ul>
-						</li>
-					</ul>
-				</div><!-- /.nav-collapse -->
-			</div>
-		</div><!-- /navbar-inner -->
-	</div><!-- /navbar -->
+			</li>
+			<li>
+				<a href="logout.php" class="btn-logout">
+					<i class="icon-signout"></i> Logout
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>

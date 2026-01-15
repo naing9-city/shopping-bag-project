@@ -1,0 +1,157 @@
+/* ================== PREMIUM ACTION BAR (SEARCH + CATEGORIES) ================== */
+
+/* 1. Main Container */
+.premium-action-bar-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 100;
+    /* Ensure dropdown works */
+}
+
+.premium-action-bar {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: #fff;
+    padding: 10px 15px;
+    border-radius: 60px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    /* Premium Shadow */
+    width: 100%;
+    max-width: 800px;
+    /* Balance constraint */
+    border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+/* 2. Categories Toggle Button */
+.categories-toggle-btn {
+    background: #111;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    padding: 12px 25px;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.categories-toggle-btn i {
+    font-size: 16px;
+    color: #fff;
+    /* White stripes as requested */
+}
+
+.categories-toggle-btn:hover {
+    background: #333;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* 3. Search Area (within Bar) */
+.search-area-central {
+    flex-grow: 1;
+    /* Take remaining space */
+    display: flex;
+    justify-content: flex-end;
+    /* Align content to right */
+}
+
+/* Override minimal search for this context */
+.search-area-central .premium-search-bar {
+    background: transparent !important;
+    /* Blend in */
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.search-area-central .premium-search-bar:hover {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+/* Input layout */
+.search-area-central .search-field {
+    font-size: 14px !important;
+    padding-left: 15px !important;
+    flex-grow: 1;
+    /* Middle space */
+}
+
+/* Search Icon */
+.search-area-central .search-icon {
+    padding-left: 10px;
+}
+
+/* Search Button - SYMMETRY FIX */
+.search-area-central .search-button {
+    height: auto !important;
+    padding: 12px 30px !important;
+    /* Matches Category Button padding */
+    margin-left: 10px;
+    font-size: 13px !important;
+    letter-spacing: 0.5px;
+    box-shadow: none !important;
+}
+
+.search-area-central .search-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* 4. Dropdown Logic */
+.categories-dropdown-wrapper {
+    position: relative;
+}
+
+.categories-dropdown-content {
+    position: absolute;
+    top: 130%;
+    /* Below button with gap */
+    left: 0;
+    width: 280px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    padding: 15px;
+
+    /* Animation Initial State */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+
+    z-index: 999;
+}
+
+/* Helper Class for JS Toggle */
+.categories-dropdown-content.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Adjust Sidebar styles for dropdown context */
+.categories-dropdown-content .side-menu {
+    box-shadow: none !important;
+    /* Remove internal shadow */
+    margin-bottom: 0 !important;
+}
+
+.categories-dropdown-content .side-menu .head {
+    display: none;
+    /* Hide original header as button acts as header */
+}

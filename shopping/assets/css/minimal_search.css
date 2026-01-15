@@ -1,0 +1,76 @@
+/* ================== MINIMAL SEARCH BAR REFINEMENTS ================== */
+
+/* 1. Main Container Sizing */
+.premium-search-bar {
+    height: 42px !important;
+    /* Reduced from larger size for minimal look */
+    border-radius: 50px !important;
+    /* Full pill shape */
+    background: #f5f5f5 !important;
+    /* Light grey bg for contrast against white header */
+    border: 1px solid transparent !important;
+    display: flex;
+    align-items: center;
+    padding: 0 4px 0 20px !important;
+    /* Internal padding */
+    transition: all 0.3s ease;
+    max-width: 500px;
+    /* Limit width */
+    margin: 0 auto;
+    /* Center if container allows */
+}
+
+/* Hover effect on the whole bar */
+.premium-search-bar:hover {
+    background: #fff !important;
+    border-color: #ddd !important;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    /* Soft lift */
+}
+
+/* 2. Search Icon alignment */
+.premium-search-bar .search-icon {
+    font-size: 14px !important;
+    color: #999;
+}
+
+/* 3. Input Field */
+.premium-search-bar .search-field {
+    background: transparent !important;
+    border: none !important;
+    height: 100% !important;
+    font-size: 13px !important;
+    color: #333;
+    padding: 0 10px !important;
+}
+
+.premium-search-bar .search-field:focus {
+    outline: none !important;
+}
+
+/* 4. Search Button (Black & Smooth) */
+.premium-search-bar .search-button {
+    height: 34px !important;
+    /* Fits inside the 42px container with margin */
+    padding: 0 25px !important;
+    background: #111 !important;
+    /* Black Theme */
+    color: #fff !important;
+    border: none !important;
+    border-radius: 50px !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+    /* Smooth animation */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Smooth Hover Animation */
+.premium-search-bar .search-button:hover {
+    background: #333 !important;
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}

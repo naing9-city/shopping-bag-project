@@ -84,20 +84,15 @@ if (isset($_GET['action']) && $_GET['action'] == "add") {
 			<div class="furniture-container homepage-container">
 				<div class="row">
 
-					<div class="col-xs-12 col-sm-12 col-md-3 sidebar">
-						<!-- ================================== TOP NAVIGATION ================================== -->
-						<?php include('includes/side-menu.php'); ?>
-						<!-- ================================== TOP NAVIGATION : END ================================== -->
-					</div><!-- /.sidemenu-holder -->
 
-					<div class="col-xs-12 col-sm-12 col-md-9 homebanner-holder">
+
+					<div class="col-xs-12 col-sm-12 col-md-12 homebanner-holder">
 						<!-- ========================================== SECTION – HERO ========================================= -->
 
 						<div id="hero" class="homepage-slider3">
 							<div id="owl-main" class="owl-carousel owl-inner-nav owl-ui-sm">
 								<div class="full-width-slider">
 									<div class="item" style="background-image: url(assets/images/sliders/bag1.png);">
-										<!-- /.container-fluid -->
 									</div><!-- /.item -->
 								</div><!-- /.full-width-slider -->
 
@@ -113,8 +108,66 @@ if (isset($_GET['action']) && $_GET['action'] == "add") {
 									</div><!-- /.item -->
 								</div><!-- /.full-width-slider -->
 
+								<div class="full-width-slider">
+									<div class="item full-width-slider"
+										style="background-image: url(assets/images/sliders/bag4.jpg);">
+									</div><!-- /.item -->
+								</div><!-- /.full-width-slider -->
+
+
+
+
 							</div><!-- /.owl-carousel -->
 						</div>
+
+
+						<!-- ============================================== ACTION BAR (SEARCH + CATEGORIES) ============================================== -->
+						<div class="premium-action-bar-container"
+							style="margin-top: 20px; position: relative; z-index: 10;">
+							<div class="premium-action-bar">
+								<!-- Categories Toggle -->
+								<div class="categories-dropdown-wrapper">
+									<button class="categories-toggle-btn" id="catToggleBtn">
+										<i class="fa fa-bars"></i> Explore Categories
+									</button>
+									<div class="categories-dropdown-content" id="catDropdown">
+										<?php include('includes/side-menu.php'); ?>
+									</div>
+								</div>
+
+								<!-- Search Bar (Relocated) -->
+								<div class="search-area-central">
+									<form method="post" action="search-result.php" style="width:100%;">
+										<div class="premium-search-bar" style="max-width: 100%; margin: 0;">
+											<i class="fa fa-search search-icon"></i>
+											<input class="search-field" placeholder="Search for premium bags..."
+												name="product" required="required" />
+											<button class="search-button" type="submit" name="search">Search</button>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+
+						<script>
+							document.addEventListener('DOMContentLoaded', function () {
+								const btn = document.getElementById('catToggleBtn');
+								const dropdown = document.getElementById('catDropdown');
+
+								btn.addEventListener('click', function (e) {
+									e.stopPropagation();
+									dropdown.classList.toggle('active');
+								});
+
+								// Close when clicking outside
+								document.addEventListener('click', function (e) {
+									if (!dropdown.contains(e.target) && !btn.contains(e.target)) {
+										dropdown.classList.remove('active');
+									}
+								});
+							});
+						</script>
+						<!-- ============================================== ACTION BAR : END ============================================== -->
 
 						<!-- ========================================= SECTION – HERO : END ========================================= -->
 						<!-- ============================================== INFO BOXES ============================================== -->

@@ -1,0 +1,868 @@
+/* Admin Premium Dashboard Styles */
+/* Logo Animation (from Login Page) */
+.logo-img {
+    transition: transform 0.3s ease;
+}
+
+.premium-brand:hover .logo-img {
+    transform: scale(1.05);
+}
+
+/* Full Width Dashboard Styles */
+.dashboard-hub {
+    padding: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hub-section {
+    margin-bottom: 40px;
+}
+
+.hub-section-header {
+    background: #fff;
+    padding: 20px 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.02);
+}
+
+.hub-section-header:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    border-color: #667eea;
+}
+
+.hub-section-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #333;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.hub-section-title i {
+    margin-right: 15px;
+    font-size: 20px;
+    color: #667eea;
+}
+
+.dashboard-welcome {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    border-radius: 15px;
+    padding: 30px;
+    color: #fff;
+    margin-bottom: 40px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.dashboard-welcome h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+    z-index: 1;
+    position: relative;
+    letter-spacing: 0.5px;
+}
+
+.dashboard-welcome p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    opacity: 0.95;
+    margin: 0;
+    z-index: 1;
+    position: relative;
+    font-weight: 300;
+}
+
+/* Premium Section Headers */
+.page-title,
+.section-header {
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 600 !important;
+    letter-spacing: 1px;
+    color: #2c3e50;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.section-header {
+    font-size: 18px;
+    text-transform: uppercase;
+    border-left: 4px solid #ff416c;
+    padding-left: 15px;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+}
+
+/* Footer Styling */
+.footer {
+    background: #fff;
+    border-top: 1px solid #eee;
+    padding: 20px 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: #777;
+}
+
+.footer .copyright {
+    color: #333;
+}
+
+.footer .pull-right {
+    font-weight: bold;
+    color: #333;
+}
+
+.hub-toggle-icon {
+    font-size: 14px;
+    color: #999;
+    transition: transform 0.3s ease;
+}
+
+.hub-section.active .hub-toggle-icon {
+    transform: rotate(180deg);
+}
+
+.hub-section-content {
+    display: none;
+    /* Hidden by default */
+    padding-top: 25px;
+    animation: slideDown 0.3s ease forwards;
+}
+
+.hub-section.active .hub-section-content {
+    display: block;
+}
+
+/* Pop-up Animation for Cards */
+@keyframes popUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.hub-section.active .stat-card {
+    animation: popUp 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    opacity: 0;
+    /* Star hidden */
+}
+
+/* Staggered Delay for Cards */
+.hub-section.active .stat-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.hub-section.active .stat-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.hub-section.active .stat-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.hub-section.active .stat-card:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+/* Dashboard Wrapper Override for Full Width */
+.dashboard-wrapper.full-width {
+    display: block !important;
+    padding: 0 !important;
+}
+
+.dashboard-wrapper.full-width .premium-content {
+    margin-left: 0 !important;
+    width: 100% !important;
+    padding: 0 !important;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+/* ================= HEADER ================= */
+.premium-dashboard-header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    height: 70px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+}
+
+.premium-brand {
+    display: flex;
+    align-items: center;
+}
+
+.premium-brand .logo-img {
+    height: 40px;
+    width: auto;
+}
+
+.premium-user-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.premium-user-nav a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    font-size: 14px;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.premium-user-nav a:hover {
+    color: #ff416c;
+}
+
+.premium-user-nav .btn-logout {
+    padding: 8px 20px;
+    background: #000;
+    color: #fff;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.premium-user-nav .btn-logout:hover {
+    background: rgba(0, 0, 0, 0.8);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    color: #fff;
+}
+
+
+/* ================= LAYOUT ================= */
+.dashboard-wrapper {
+    display: flex;
+    margin-top: 70px;
+    /* Header height */
+    min-height: calc(100vh - 70px);
+}
+
+/* ================= SIDEBAR ================= */
+.premium-sidebar {
+    width: 280px;
+    background: #1a1a1a;
+    /* Dark sleek background */
+    color: #fff;
+    padding: 30px 0;
+    flex-shrink: 0;
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.05);
+}
+
+.premium-menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.premium-menu-title {
+    padding: 0 25px;
+    margin-bottom: 10px;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #666;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+.premium-menu-item {
+    display: block;
+}
+
+.premium-menu-link {
+    display: flex;
+    align-items: center;
+    padding: 15px 25px;
+    color: #aaa;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+    font-size: 14px;
+}
+
+.premium-menu-link i {
+    width: 25px;
+    font-size: 18px;
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+}
+
+.premium-menu-link:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    border-left-color: #ff416c;
+}
+
+.premium-menu-link:hover i {
+    transform: translateX(5px);
+    color: #ff416c;
+}
+
+.premium-menu-link .badge {
+    margin-left: auto;
+    background: #ff416c;
+    color: #fff;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 10px;
+}
+
+.premium-menu-link.active {
+    background: rgba(255, 65, 108, 0.1);
+    color: #ff416c;
+    border-left-color: #ff416c;
+}
+
+/* ================= CONTENT AREA ================= */
+.premium-content {
+    flex-grow: 1;
+    padding: 40px;
+    width: 100%;
+}
+
+.premium-content-header {
+    margin-bottom: 30px;
+}
+
+.page-title {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin: 0;
+    color: #111;
+}
+
+/* Glass Card Content */
+.premium-card {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.premium-form-group {
+    margin-bottom: 25px;
+}
+
+.premium-label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 500;
+    color: #444;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.premium-input {
+    width: 100%;
+    padding: 12px 20px;
+    background: #f8f9fa;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    color: #333;
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+.premium-input:focus {
+    background: #fff;
+    border-color: #000;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
+    outline: none;
+}
+
+.premium-submit-btn {
+    background: #000;
+    color: #fff;
+    padding: 14px 40px;
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.premium-submit-btn:hover {
+    background: rgba(0, 0, 0, 0.8);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Dashboard Stat Cards - Premium Upgrade */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    /* Slightly wider cards */
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.stat-card {
+    background: #fff;
+    border-radius: 20px;
+    /* Rounder corners */
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    /* Softer shadow */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* Smooth bounce effect */
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+/* Hover Effects - Glow & Popup */
+.stat-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    /* Popup effect */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+    z-index: 10;
+}
+
+/* Specific Glows based on type (using previous color variables) */
+.stat-card.order:hover {
+    box-shadow: 0 20px 40px rgba(102, 126, 234, 0.25);
+    /* Blue/Purple Glow */
+    border-color: rgba(102, 126, 234, 0.3);
+}
+
+.stat-card.catalog:hover {
+    box-shadow: 0 20px 40px rgba(42, 245, 152, 0.25);
+    /* Green Glow */
+    border-color: rgba(42, 245, 152, 0.3);
+}
+
+.stat-card.user:hover {
+    box-shadow: 0 20px 40px rgba(255, 154, 158, 0.25);
+    /* Red/Pink Glow */
+    border-color: rgba(255, 154, 158, 0.3);
+}
+
+
+/* Layout: Icon Left, Text Middle, Number Right */
+.stat-icon {
+    width: 60px;
+    /* Larger icon bg */
+    height: 60px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: #fff;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover .stat-icon {
+    transform: rotate(10deg) scale(1.1);
+}
+
+.stat-label-text {
+    flex-grow: 1;
+    text-align: center;
+    /* Clean and minimal in the middle */
+    font-size: 15px;
+    font-weight: 600;
+    color: #555;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 0 15px;
+}
+
+.stat-number {
+    font-size: 28px;
+    font-weight: 800;
+    color: #333;
+    display: block;
+    flex-shrink: 0;
+    min-width: 40px;
+    text-align: right;
+}
+
+/* Remove old styles that might conflict */
+.stat-info,
+.stat-value,
+.stat-label {
+    display: none;
+    /* In case any strict js/php relies on them, but we replaced HTML */
+}
+
+/* Color Variants */
+.stat-card.order .stat-icon {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    box-shadow: 0 8px 15px rgba(118, 75, 162, 0.3);
+}
+
+.stat-card.catalog .stat-icon {
+    background: linear-gradient(135deg, #2af598 0%, #009efd 100%);
+    box-shadow: 0 8px 15px rgba(0, 158, 253, 0.3);
+}
+
+.stat-card.user .stat-icon {
+    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+    box-shadow: 0 8px 15px rgba(255, 154, 158, 0.3);
+}
+
+/* Messages */
+.alert-success {
+    background: rgba(46, 204, 113, 0.1);
+    border: 1px solid #2ecc71;
+    color: #27ae60;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.alert-error {
+    background: rgba(231, 76, 60, 0.1);
+    border: 1px solid #e74c3c;
+    color: #c0392b;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* ================= TABLES ================= */
+.premium-table {
+    width: 100%;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.premium-table thead th {
+    background: rgba(0, 0, 0, 0.02);
+    color: #444;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    padding: 15px;
+    border-bottom: 2px solid #eee;
+    text-align: left;
+}
+
+.premium-table tbody td {
+    padding: 15px;
+    border-bottom: 1px solid #f0f0f0;
+    color: #666;
+    vertical-align: middle;
+}
+
+.premium-table tbody tr:hover {
+    background: rgba(0, 0, 0, 0.01);
+}
+
+.premium-table .btn {
+    padding: 5px 15px;
+    font-size: 12px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+/* Pagination Styles override */
+.datatable-pagination {
+    display: flex;
+    justify-content: flex-end;
+    gap: 5px;
+}
+
+.datatable-pagination a {
+    padding: 5px 10px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    cursor: pointer;
+    background: #fff;
+    color: #555;
+    text-decoration: none;
+}
+
+.datatable-pagination a:hover {
+    background: #f5f5f5;
+}
+
+/* Header Adjustment */
+.premium-dashboard-header {
+    padding: 0 40px;
+}
+
+.premium-user-nav {
+    margin-right: 60px;
+}
+
+/* ================= DATATABLES PREMIUM STYLING ================= */
+.dataTables_wrapper {
+    font-family: 'Poppins', sans-serif;
+    padding-top: 10px;
+}
+
+/* Search & Length Controls */
+.dataTables_length,
+.dataTables_filter {
+    margin-bottom: 20px;
+    color: #555;
+    font-weight: 500;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.dataTables_length {
+    float: left;
+}
+
+.dataTables_filter {
+    float: right;
+}
+
+.dataTables_length select,
+.dataTables_filter input {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 8px 12px;
+    color: #333;
+    font-family: inherit;
+    background: #fdfdfd;
+    transition: all 0.3s ease;
+    outline: none;
+    box-shadow: none;
+    height: auto;
+}
+
+.dataTables_length select:focus,
+.dataTables_filter input:focus {
+    border-color: #000;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.05);
+}
+
+.dataTables_filter input {
+    margin-left: 10px;
+    min-width: 250px;
+    /* Wider search box */
+}
+
+.dataTables_length select {
+    margin: 0 5px;
+    width: auto;
+}
+
+/* Table Itself */
+.premium-table {
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    overflow: hidden;
+    /* For rounded corners */
+    margin-bottom: 25px !important;
+    width: 100% !important;
+}
+
+.premium-table.dataTable thead th {
+    background: #f8f9fa;
+    color: #2c3e50;
+    font-weight: 600;
+    padding: 15px;
+    border-bottom: 2px solid #eaeaea;
+    position: relative;
+}
+
+.premium-table.dataTable thead th:after,
+.premium-table.dataTable thead th:before {
+    /* Clean up sort icons */
+    opacity: 0.5;
+}
+
+.premium-table.dataTable tbody td {
+    padding: 14px 15px;
+    border-bottom: 1px solid #f2f2f2;
+    color: #555;
+    vertical-align: middle;
+}
+
+.premium-table.dataTable tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.premium-table.dataTable tbody tr:hover {
+    background-color: #fafafa !important;
+    /* Force hover color */
+}
+
+/* Footer / Pagination */
+.dataTables_info {
+    float: left;
+    margin-top: 10px;
+    color: #888;
+    font-size: 13px;
+}
+
+.dataTables_paginate {
+    float: right;
+    margin-top: 5px;
+}
+
+.dataTables_paginate a {
+    padding: 6px 14px !important;
+    margin-left: 5px;
+    border: 1px solid #eee !important;
+    border-radius: 8px !important;
+    background: #fff !important;
+    color: #555 !important;
+    font-size: 13px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s;
+    display: inline-block;
+}
+
+.dataTables_paginate a:hover {
+    background: #f4f4f4 !important;
+    color: #000 !important;
+    transform: translateY(-1px);
+}
+
+.dataTables_paginate .paginate_active,
+.dataTables_paginate a.paginate_active {
+    background: #000 !important;
+    color: #fff !important;
+    border-color: #000 !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.dataTables_paginate .paginate_button.disabled {
+    opacity: 0.5;
+    cursor: default;
+}
+
+/* Table Buttons - Override Bootstrap */
+.premium-table .btn {
+    padding: 6px 18px;
+    font-size: 11px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    border: none;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    background-image: none;
+    /* Remove bootstrap gradient */
+    text-shadow: none;
+}
+
+.premium-table .btn-info {
+    background: #17a2b8;
+    /* Modern Info Blue */
+    color: #fff;
+}
+
+.premium-table .btn-info:hover {
+    background: #138496;
+    transform: translateY(-1px);
+    box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+}
+
+.premium-table .btn-danger {
+    background: #dc3545;
+    /* Modern Danger Red */
+    color: #fff;
+}
+
+.premium-table .btn-danger:hover {
+    background: #c82333;
+    transform: translateY(-1px);
+    box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* Fix Alignment of "Show entries" text */
+.dataTables_length label {
+    font-weight: 500;
+    margin-bottom: 0;
+    color: #666;
+}
+
+/* Ensure no weird wrapping in controls */
+.dataTables_wrapper .row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* Clear Floats */
+.dataTables_wrapper:after {
+    content: "";
+    display: block;
+    clear: both;
+}

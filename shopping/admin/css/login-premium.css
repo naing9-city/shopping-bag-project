@@ -1,0 +1,218 @@
+/* Premium Global Styles REFINED */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ================== EXACT HEADER MATCH ================== */
+.premium-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    z-index: 1000;
+    height: 85px;
+    /* Match index page height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Center logo */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+}
+
+.premium-navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.logo-img {
+    height: 50px;
+    /* Match index page logo size */
+    width: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover .logo-img {
+    transform: scale(1.05);
+}
+
+/* ================== LOGIN CONTAINER ================== */
+.premium-login-container {
+    width: 100%;
+    max-width: 550px;
+    /* Widened for balance */
+    padding: 120px 20px 40px;
+    /* Top padding to clear header */
+    box-sizing: border-box;
+}
+
+/* Glassmorphism Card */
+.premium-login-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 20px;
+    padding: 60px 50px;
+    /* Balanced padding */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.premium-login-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+}
+
+/* Headings */
+.premium-title {
+    color: #111;
+    font-size: 28px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 15px;
+}
+
+.premium-title:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background: #000;
+    /* Black accent */
+    border-radius: 3px;
+    transition: width 0.3s ease;
+}
+
+.premium-login-card:hover .premium-title:after {
+    width: 80px;
+}
+
+.brand-subtitle {
+    display: block;
+    margin-bottom: 40px;
+    color: #888;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+/* ================== FORM CONTROLS ================== */
+.control-group {
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.premium-input {
+    width: 100%;
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    color: #333;
+    border-radius: 12px;
+    height: 55px;
+    /* Taller inputs */
+    padding: 0 25px;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    box-shadow: none;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.premium-input:focus {
+    background: #fff;
+    border-color: #000;
+    box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.05);
+    outline: none;
+}
+
+/* ================== BLACK GLASS BUTTON ================== */
+.premium-btn {
+    width: 100%;
+    background: #000;
+    /* Pure Black */
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    padding: 16px 35px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 14px;
+    margin-top: 15px;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Glass Effect on Hover */
+.premium-btn:hover {
+    background: rgba(0, 0, 0, 0.85);
+    /* Slightly translucent black */
+    backdrop-filter: blur(10px);
+    /* Glass blur */
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    /* Soft shadow */
+    color: #fff;
+}
+
+/* Error Message */
+.error-msg {
+    color: #e74c3c;
+    font-size: 14px;
+    margin-bottom: 25px;
+    display: block;
+    font-weight: 500;
+}
+
+/* Back Link */
+.back-link {
+    display: block;
+    margin-top: 30px;
+    color: #888;
+    font-size: 13px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-weight: 500;
+}
+
+.back-link:hover {
+    color: #000;
+}
+
+/* Footer Copyright */
+.premium-footer {
+    position: fixed;
+    bottom: 20px;
+    text-align: center;
+    width: 100%;
+    color: #888;
+    font-size: 12px;
+    z-index: 900;
+}

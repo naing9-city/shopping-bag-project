@@ -129,8 +129,65 @@ if (isset($_POST['shipupdate'])) {
 		<![endif]-->
 
 
-	    <!-- Premium Login CSS (Shared for Cart) -->
-	    <link rel="stylesheet" href="assets/css/premium-login.css">
+	<!-- Premium Login CSS (Shared for Cart) -->
+	<link rel="stylesheet" href="assets/css/premium-login.css">
+
+	<style>
+		.address-form-card {
+			background: #fff;
+			padding: 30px;
+			border-radius: 12px;
+			box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+			border: 1px solid rgba(0, 0, 0, 0.02);
+			transition: all 0.3s ease;
+		}
+
+		.address-form-card:hover {
+			box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2), 0 0 15px rgba(0, 0, 0, 0.1);
+			transform: translateY(-2px);
+			border-color: rgba(0, 0, 0, 0.2);
+		}
+
+		.address-form-card .section-title {
+			margin-top: 0;
+			margin-bottom: 25px;
+			font-weight: 600;
+			color: #333;
+			font-size: 18px;
+			border-bottom: 2px solid #f0f0f0;
+			padding-bottom: 15px;
+		}
+
+		.address-form-card .form-control {
+			border-radius: 6px;
+			border: 1px solid #eee;
+			padding: 12px;
+			box-shadow: none;
+			transition: all 0.3s ease;
+		}
+
+		.address-form-card .form-control:focus {
+			border-color: #333;
+			box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+		}
+
+		.address-form-card .btn-primary {
+			border-radius: 6px;
+			height: 45px;
+			font-weight: 600;
+			font-size: 14px;
+			letter-spacing: 0.5px;
+			transition: all 0.3s ease;
+			background-color: #333;
+			border-color: #333;
+		}
+		
+		.address-form-card .btn-primary:hover {
+			background-color: #000;
+			border-color: #000;
+			box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+		}
+	</style>
 
 </head>
 
@@ -162,7 +219,7 @@ if (isset($_POST['shipupdate'])) {
 				<div class="shopping-cart">
 					<div class="col-md-12 col-sm-12 shopping-cart-table ">
 						<div class="table-responsive">
-							<form name="cart" method="post">
+							<form name="cart" method="post" action="my-cart.php">
 								<?php
 								if (!empty($_SESSION['cart'])) {
 									?>
@@ -308,139 +365,131 @@ if (isset($_POST['shipupdate'])) {
 								} ?>
 						</div>
 					</div><!-- /.shopping-cart-table -->
+					</form> <!-- Close Cart Form Here -->
 
-						<div class="col-md-6 col-sm-12 estimate-ship-tax">
-							<table class="table table-bordered">
-								<thead>
-									<tr>
-										<th>
-											<span class="estimate-title">Billing Address</span>
-										</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>
-											<div class="form-group">
-												<?php
-												$query = mysqli_query($con, "select * from users where id='" . $_SESSION['id'] . "'");
-												while ($row = mysqli_fetch_array($query)) {
-													?>
+					<div class="col-md-6 col-sm-12 estimate-ship-tax">
+						<div class="checkout-box-2" style="background: transparent; padding: 0;">
+							<?php
+							if (strlen($_SESSION['login']) == 0) {
+								echo '<div class="alert alert-info" role="alert" style="border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">Please <a href="login.php" class="alert-link">login</a> to update billing address.</div>';
+							} else {
+								$query = mysqli_query($con, "select * from users where id='" . $_SESSION['id'] . "'");
+								while ($row = mysqli_fetch_array($query)) {
+									?>
+									<form method="post" class="address-form-card">
+										<h4 class="section-title">Billing Address</h4>
+										<div class="form-group">
+											<label class="info-title" for="Billing Address"
+												style="font-weight: 500; color: #666;">Address <span
+													style="color:red">*</span></label>
+											<textarea class="form-control unicase-form-control text-input" name="billingaddress"
+												rows="3" required="required"
+												style="resize: vertical;"><?php echo $row['billingAddress']; ?></textarea>
+										</div>
 
-													<div class="form-group">
-														<label class="info-title" for="Billing Address">Billing
-															Address<span>*</span></label>
-														<textarea class="form-control unicase-form-control text-input"
-															name="billingaddress"
-															required="required"><?php echo $row['billingAddress']; ?></textarea>
-													</div>
+										<div class="form-group">
+											<label class="info-title" for="Billing State"
+												style="font-weight: 500; color: #666;">State <span
+													style="color:red">*</span></label>
+											<input type="text" class="form-control unicase-form-control text-input"
+												id="bilingstate" name="bilingstate" value="<?php echo $row['billingState']; ?>"
+												required style="height: 45px; padding: 0 15px;">
+										</div>
+										<div class="form-group">
+											<label class="info-title" for="Billing City"
+												style="font-weight: 500; color: #666;">City <span
+													style="color:red">*</span></label>
+											<input type="text" class="form-control unicase-form-control text-input"
+												id="billingcity" name="billingcity" required="required"
+												value="<?php echo $row['billingCity']; ?>"
+												style="height: 45px; padding: 0 15px;">
+										</div>
+										<div class="form-group">
+											<label class="info-title" for="Billing Pincode"
+												style="font-weight: 500; color: #666;">Pincode <span
+													style="color:red">*</span></label>
+											<input type="text" class="form-control unicase-form-control text-input"
+												id="billingpincode" name="billingpincode" required="required"
+												value="<?php echo $row['billingPincode']; ?>"
+												style="height: 45px; padding: 0 15px;">
+										</div>
 
-
-
-													<div class="form-group">
-														<label class="info-title" for="Billing State ">Billing State
-															<span>*</span></label>
-														<input type="text" class="form-control unicase-form-control text-input"
-															id="bilingstate" name="bilingstate"
-															value="<?php echo $row['billingState']; ?>" required>
-													</div>
-													<div class="form-group">
-														<label class="info-title" for="Billing City">Billing City
-															<span>*</span></label>
-														<input type="text" class="form-control unicase-form-control text-input"
-															id="billingcity" name="billingcity" required="required"
-															value="<?php echo $row['billingCity']; ?>">
-													</div>
-													<div class="form-group">
-														<label class="info-title" for="Billing Pincode">Billing Pincode
-															<span>*</span></label>
-														<input type="text" class="form-control unicase-form-control text-input"
-															id="billingpincode" name="billingpincode" required="required"
-															value="<?php echo $row['billingPincode']; ?>">
-													</div>
-
-
-													<button type="submit" name="update"
-														class="btn-upper btn btn-primary checkout-page-button">Update</button>
-
-												<?php } ?>
-
-											</div>
-
-										</td>
-									</tr>
-								</tbody><!-- /tbody -->
-							</table><!-- /table -->
+										<button type="submit" name="update"
+											class="btn-upper btn btn-primary checkout-page-button"
+											style="width: 100%; margin-top: 20px;">Update
+											Billing</button>
+									</form>
+								<?php }
+							} ?>
 						</div>
+					</div>
 
-						<div class="col-md-6 col-sm-12 estimate-ship-tax">
-							<table class="table table-bordered">
-								<thead>
-									<tr>
-										<th>
-											<span class="estimate-title">Shipping Address</span>
-										</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>
-											<div class="form-group">
-												<?php
-												$query = mysqli_query($con, "select * from users where id='" . $_SESSION['id'] . "'");
-												while ($row = mysqli_fetch_array($query)) {
-													?>
+					<div class="col-md-6 col-sm-12 estimate-ship-tax">
+						<div class="checkout-box-2" style="background: transparent; padding: 0;">
+							<?php
+							if (strlen($_SESSION['login']) == 0) {
+								echo '<div class="alert alert-info" role="alert" style="border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">Please <a href="login.php" class="alert-link">login</a> to update shipping address.</div>';
+							} else {
+								$query = mysqli_query($con, "select * from users where id='" . $_SESSION['id'] . "'");
+								while ($row = mysqli_fetch_array($query)) {
+									?>
+									<form method="post" class="address-form-card">
+										<h4 class="section-title">Shipping Address</h4>
+										<div class="form-group">
+											<label class="info-title" for="Shipping Address"
+												style="font-weight: 500; color: #666;">Address <span
+													style="color:red">*</span></label>
+											<textarea class="form-control unicase-form-control text-input"
+												name="shippingaddress" rows="3" required="required"
+												style="resize: vertical;"><?php echo $row['shippingAddress']; ?></textarea>
+										</div>
 
-													<div class="form-group">
-														<label class="info-title" for="Shipping Address">Shipping
-															Address<span>*</span></label>
-														<textarea class="form-control unicase-form-control text-input"
-															name="shippingaddress"
-															required="required"><?php echo $row['shippingAddress']; ?></textarea>
-													</div>
+										<div class="form-group">
+											<label class="info-title" for="Billing State"
+												style="font-weight: 500; color: #666;">State <span
+													style="color:red">*</span></label>
+											<input type="text" class="form-control unicase-form-control text-input"
+												id="shippingstate" name="shippingstate"
+												value="<?php echo $row['shippingState']; ?>" required
+												style="height: 45px; padding: 0 15px;">
+										</div>
+										<div class="form-group">
+											<label class="info-title" for="Billing City"
+												style="font-weight: 500; color: #666;">City <span
+													style="color:red">*</span></label>
+											<input type="text" class="form-control unicase-form-control text-input"
+												id="shippingcity" name="shippingcity" required="required"
+												value="<?php echo $row['shippingCity']; ?>"
+												style="height: 45px; padding: 0 15px;">
+										</div>
+										<div class="form-group">
+											<label class="info-title" for="Billing Pincode"
+												style="font-weight: 500; color: #666;">Pincode <span
+													style="color:red">*</span></label>
+											<input type="text" class="form-control unicase-form-control text-input"
+												id="shippingpincode" name="shippingpincode" required="required"
+												value="<?php echo $row['shippingPincode']; ?>"
+												style="height: 45px; padding: 0 15px;">
+										</div>
 
-
-
-													<div class="form-group">
-														<label class="info-title" for="Billing State ">Shipping State
-															<span>*</span></label>
-														<input type="text" class="form-control unicase-form-control text-input"
-															id="shippingstate" name="shippingstate"
-															value="<?php echo $row['shippingState']; ?>" required>
-													</div>
-													<div class="form-group">
-														<label class="info-title" for="Billing City">Shipping City
-															<span>*</span></label>
-														<input type="text" class="form-control unicase-form-control text-input"
-															id="shippingcity" name="shippingcity" required="required"
-															value="<?php echo $row['shippingCity']; ?>">
-													</div>
-													<div class="form-group">
-														<label class="info-title" for="Billing Pincode">Shipping Pincode
-															<span>*</span></label>
-														<input type="text" class="form-control unicase-form-control text-input"
-															id="shippingpincode" name="shippingpincode" required="required"
-															value="<?php echo $row['shippingPincode']; ?>">
-													</div>
-
-
-													<button type="submit" name="shipupdate"
-														class="btn-upper btn btn-primary checkout-page-button">Update</button>
-												<?php } ?>
-
-
-											</div>
-
-										</td>
-									</tr>
-								</tbody><!-- /tbody -->
-							</table><!-- /table -->
+										<button type="submit" name="shipupdate"
+											class="btn-upper btn btn-primary checkout-page-button"
+											style="width: 100%; margin-top: 20px;">Update
+											Shipping</button>
+									</form>
+								<?php }
+							} ?>
 						</div>
+					</div>
+					<div class="clearfix"></div>
+					<div style="margin-bottom: 50px;"></div>
 				</div>
 			</div>
 		</div>
-		</form>
-		<?php echo include('includes/brands-slider.php'); ?>
+	</div>
+	</div>
+
+	<?php echo include('includes/brands-slider.php'); ?>
 	</div>
 	</div>
 	<?php include('includes/footer.php'); ?>
